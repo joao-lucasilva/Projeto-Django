@@ -1,4 +1,9 @@
 body{
     background-color: aquamarine;
     color: blueviolet;
+    display: flex;
+}
+form{
+    justify-content: center;
+    align-items: center;
 }

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from website.models import Pessoa
 
 # Create your views here.
 def index(request):
