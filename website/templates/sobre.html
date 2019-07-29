@@ -1,6 +1,13 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
-    <h1>Sobre</h1>
+    <h1>Listagem da ideias</h1>
+<p>
+{% for ideia in ideias %}
+    <p>{{ideia.pessoa.nome}}</p>
+    <p>{{ideia.titulo}}</p>
+    <p>{{ideia.categoria}}</p>
+    <p>{{ideia.descricao}}</p>
+{% endfor %}
+</p>
 
-{% include 'shared/teste.html' %}
 {% endblock %}

@@ -1,24 +1,26 @@
-{% extends 'shared/layout.html' %}
+{% extends "shared/layout.html" %}
 {% block conteudo %}
-<h1>Ideias malucas</h1>
+<title>Ideias Malucas</title>
 
-<form action="/" method="post">
+<body>
+<h1>Bem Vindo ao Idéias Malucas</h1>
+<h2>Este é um lugar para você se expressar, com relação a todo tipo de idéia estranha que você já teve</h2>
+<h3>Nós acreditamos que são é tipo de ideia que tranformam o mundo, então qeuremos que você abra sua mente</h3>
+<img src="{% static 'img/ideia1.jpg' %}" alt="Ideias mudam o mundo">
+<h3>Tudo o que você precisa fazer para descobrir Ideias incriveis, ou impactar pessoas com as suas é entrar em nosso site</h3>
+
+    <h2>Login</h2>
+    <p>{{msg}}</p>
+    <form action="/login" method="post"></form>
     {% csrf_token %}
-    <label>Nome</label>
-    <input type="text" name="nome">
+    <input type="email" name="email" placeholder="E-mail">
+    <input type="submit" value="Login">
 
-    <label>Sobrenome</label>
-    <input type="text" name="sobrenome">
+<h3>Ainda não tem uma conta?</h3>
+<a href="cadastro.html">Cadastre-se agora mesmo!</a>
+<h3>Aproveite o Ideias Malucas</h3>
+<h3>"Quando  uma boa ideia acontece e seu comodismo a disperdiça você ficará em dívida com a humanidade"</h3>
+<h3> - Ivan Teorilang</h3>
+</body>
 
-    <label>E-mail</label>
-    <input type="text" name="email">
-
-    <select name="genero">
-        <option value="M">Masculino</option>
-        <option value="F">Feminino</option>
-        <option value="O">Outro</option>
-    </select>
-
-    <input type="submit" value="Cadastrar">
-</form>
-{% endblock %}
+{% endblock conteudo %}

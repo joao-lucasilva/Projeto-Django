@@ -1,0 +1,32 @@
+{% extends "shared/layout.html" %}
+{% block conteudo %}
+
+<title>Cadastro de ideias</title>
+
+<body>
+    {% if pessoa is None %}
+        <h1>Ops!, você precisa se cadastrar primeiro :|</h1>
+        <p>
+            <a href="/cadastro">Clique aqui para se cadastrar</a>
+        </p>
+    {% else %}
+    <h1>Cadastre sua Ideia</h1>
+    <form action="/ideias" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="email" value="{{pessoa.email}}">
+        <input type="text" name="titulo" placeholder="Digite o nome da sua idéia:">
+        <label for="descricao">Descreva sua idéia</label>
+        <textarea name="descricao" cols="30" rows="20"></textarea>
+        <select name="categorias">
+            <option value="T">Tecnologia</option>
+            <option value="S">Saúde</option>
+            <option value="C">Culinária</option>
+            <option value="V">Vestimenta</option>
+            <option value="O">Outros</option>
+        </select>
+        <input type="text" name="categoria_outos" placeholder="Caso outros, qual?">
+        <input type="submit" value="Cadastrar Idéia">
+    </form>
+</body>
+{% endif %}
+{% endblock %}

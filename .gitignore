@@ -2,3 +2,9 @@
 .vscode
 vscode
 code
+env
+venv
+.env 
+.venv
+ENV
+VENV

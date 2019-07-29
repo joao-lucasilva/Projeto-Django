@@ -31,8 +31,15 @@ class Pessoa(models.Model):
         verbose_name='E-mail'
     )
 
+    biografia = models.TextField(
+        null = True,
+        blank = True
+    )
     data_de_criacao = models.DateTimeField(auto_now_add=True)
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nome + ' '+self.sobrenome
+
+class Ideia(models.Model):
+    
